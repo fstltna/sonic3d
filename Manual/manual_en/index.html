@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html class="pageview">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<base target="_top">
+<style type="text/css">
+  
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+  border-collapse: collapse;
+}
+
+
+tr {
+  
+  text-align: left;
+  
+}
+
+
+div, address, ol, ul, li, option, select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+
+pre {
+  font-family: Courier New;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+img {
+  -moz-force-broken-image-icon: 1;
+}
+
+@media screen {
+  html.pageview {
+    background-color: #f3f3f3 !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  
+
+  body {
+    min-height: 1100px;
+    
+    counter-reset: __goog_page__;
+  }
+  
+  * html body {
+    height: 1100px;
+  }
+  /* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+     targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+     That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+  html*#wys_frame::before {
+    content: '\A0';
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  .pageview body {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    width: 648px !important;
+    margin: 15px auto 25px;
+    padding: 40px 50px;
+  }
+  /* IE6 */
+  * html {
+    overflow-y: scroll;
+  }
+  * html.pageview body {
+    overflow-x: auto;
+  }
+  
+
+  
+    
+    .writely-callout-data {
+      display: none;
+    }
+    
+
+    .writely-footnote-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 7px;
+      overflow: hidden;
+      height: 16px;
+      vertical-align: top;
+
+      
+      -moz-user-select: none;
+    }
+    .editor .writely-footnote-marker {
+      cursor: move;
+    }
+    .writely-footnote-marker-highlight {
+      background-position: -15px 0;
+      -moz-user-select: text;
+    }
+    .writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection {
+      cursor: move;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+
+  
+
+
+  
+  .br_fix span+br:not(:-moz-last-node) {
+    
+    position:relative;
+    
+    left: -1ex
+    
+  }
+
+  
+  #cb-p-tgt {
+    font-size: 8pt;
+    padding: .4em;
+    background-color: #ddd;
+    color: #333;
+  }
+  #cb-p-tgt-can {
+    text-decoration: underline;
+    color: #36c;
+    font-weight: bold;
+    margin-left: 2em;
+  }
+  #cb-p-tgt .spin {
+    width: 16px;
+    height: 16px;
+    background: url(//ssl.gstatic.com/docs/clipboard/spin_16o.gif) no-repeat;
+  }
+}
+
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+.webkit-indent-blockquote { border: none; }
+
+a img {border: 0}
+
+.pb {
+  border-width: 0;
+  page-break-after: always;
+  /* We don't want this to be resizeable, so enforce a width and height
+     using !important */
+  height: 1px !important;
+  width: 100% !important;
+}
+
+.editor .pb {
+  border-top: 1px dashed #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
+}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Table of contents */
+.editor div.writely-toc {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.writely-toc > ol {
+  padding-left: 3em;
+  font-weight: bold;
+}
+ol.writely-toc-subheading {
+  padding-left: 1em;
+  font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+  list-style-position: inside;
+}
+.writely-toc-none {
+  list-style-type: none;
+}
+.writely-toc-decimal {
+  list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+  list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+  list-style-type: lower-roman;
+}
+.writely-toc-disc {
+  list-style-type: disc;
+}
+
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+   vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+  list-style-type: disc;
+}
+
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+  list-style-type: decimal;
+}
+
+/* end default css */
+
+
+  /* default print css */
+  @media print {
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+
+    .endnotes {
+      page: endnote;
+    }
+
+    /* MLA specifies that endnotes title should be 1" margin from the top of the page. */
+    @page endnote {
+      margin-top: 1in;
+    }
+
+    callout.google_footnote {
+      
+      display: prince-footnote;
+      footnote-style-position: inside;
+      /* These styles keep the footnote from taking on the style of the text
+         surrounding the footnote marker. They can be overridden in the
+         document CSS. */
+      color: #000;
+      font-family: Verdana;
+      font-size: 10.0pt;
+      font-weight: normal;
+    }
+
+    /* Table of contents */
+    #WritelyTableOfContents a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+
+    #WritelyTableOfContents a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+    @footnotes {
+      border-top: solid black thin;
+      padding-top: 8pt;
+    }
+  }
+  /* end default print css */
+
+
+/* custom css */
+
+
+/* end custom css */
+
+/* ui edited css */
+
+body {
+  font-family: Verdana;
+  
+  font-size: 10.0pt;
+  line-height: normal;
+  background-color: #ffffff;
+}
+/* end ui edited css */
+
+
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+
+
+.editor div.google_header, .editor div.google_footer {
+  border: 2px #DDDDDD dashed;
+  position: static;
+  width: 100%;
+  min-height: 2em;
+}
+
+.editor .misspell {background-color: yellow}
+
+.editor .writely-comment {
+  font-size: 9pt;
+  line-height: 1.4;
+  padding: 1px;
+  border: 1px dashed #C0C0C0
+}
+
+
+/* end editor CSS */
+
+</style>
+
+  
+  <title>Sonic the Hedgehog 3D EN Manual</title>
+
+</head>
+
+<body 
+    
+    >
+    
+    
+    
+<p style=TEXT-ALIGN:center></p>
+<p style=TEXT-ALIGN:center><img src="images/logo.jpg" alt="logo" width="433" height="150" /></p>
+<div id=ef_5 style=TEXT-ALIGN:center></div>
+<p>
+</p>
+<h2 style=TEXT-ALIGN:center>V 0.3.1</h2>
+<p>
+  <br>
+</p>
+<p>
+  <strong>Sonic the Hedgehog 3D</strong> is a fan game by Zykov Eddy and it was inspired by two famous Sonic series: the Mega Drive  and Sonic Adventure series. The game is made on <a href="http://en.wikipedia.org/wiki/Build_engine">Build Engine</a> with additional EDuke 32 port.</p>
+<p>&nbsp;</p>
+<p>
+  <a class="external text" href=http://www.sonic3d.ru/ rel=nofollow><br>
+  </a>
+</p>
+<p>
+  <b>* Minimum Hardware Requirements:</b>
+</p>
+<p>
+  Windows XP/7<br>
+</p>
+<p>
+  2.0GHz Intel Pentium III or AMD Athlon Processor
+</p>
+<p>
+  256 MB of RAM
+</p>
+<p>
+  64 MB Video Card with <strong>OpenGL</strong> compatible drivers</p>
+<p>
+  ("GeForce4 MX" or better)
+</p>
+<p>
+  OpenAL compatible Stereo Sound Card
+</p>
+<p>
+  Keyboard
+</p>
+<p>
+  Mouse
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Recommended Hardware Requirements:</b>
+</p>
+<p>Windows XP/7</p>
+<p>
+  Intel Pentium 4 or AMD Athlon XP processor (or better)
+</p>
+<p>
+  1GB(+) of RAM
+</p>
+<p>
+  256(+) MB Video Card with DirectX 9 compatible drivers
+</p>
+<p>
+  ("Radeon 9600 Pro" or better)
+</p>
+<p>
+  OpenAL compatible Surround Sound Card
+</p>
+<p>
+  Keyboard
+</p>
+<p>
+  Mouse
+</p>
+<p>
+  <br>
+</p>
+<p>
+  We recommend using the latest drivers available.
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Video Hardware Providers/Manufacturers:</b>
+</p>
+<p>
+  ATI: <a href=http://ati.com id=vsoh title=ati.com>Ati.com</a>
+</p>
+<p>
+  Creative Labs: <a href=http://creative.com id=wvhl title=Creative.com>Creative.com</a>
+</p>
+<p>
+  Hercules: <a href=http://hercules.com/ id=jvjx title=hercules.com>Hercules.com</a>
+</p>
+<p>
+  Intel: <a href=http://intel.com/ id=vaqw title=Intel.com>Intel.com</a>
+</p>
+<p>
+  Matrox: <a href=http://matrox.com/ id=sp1g title=Matrox.com>Matrox.com</a>
+</p>
+<p>
+  Nvidia: <a href=http://nvidia.com/ id=diw8 title=Nvidia.com>Nvidia.com</a>
+</p>
+<p>
+  S3: <a href=http://s3graphics.com/ id=kxhu title=S3graphics.com>S3graphics.com</a>
+</p>
+<p>
+  SIS: <a href=http://sis.com/ id=cqy. title=Sis.com>Sis.com</a>
+</p>
+<p>
+  Trident: <a href=http://tridentmicro.com/ id=t0t_ title=Tridentmicro.com>Tridentmicro.com</a><br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Default controls</b><br>
+  <strong>W</strong> – move forward<br>
+  <strong>S</strong> – move back<br>
+  <strong>A</strong> – strafe left<br>
+  <strong>D</strong> – strafe right</p>
+<p><strong>Space</strong> - jump<br>
+  <strong>Mouse 2</strong> – spin dash</p>
+<p>
+<strong>E</strong> or <strong>Mouse 1</strong> - use (you'll need this to press buttons and activate special attacks)</p>
+<p><strong>Esc</strong> – exit to menu/pause<br>
+</p>
+<p><strong>H</strong> – change the hud.</p>
+<p><strong>F</strong> – activate <strong>super mode</strong> (you need all emeralds to do it and 50 rings)<br>
+<strong>F12</strong> – take a screenshot.</p>
+<p>&nbsp;</p>
+<p>You may change the controls in the options. </p>
+<p>To play with joystick, select &quot;<strong>Input devices: All supported devices</strong>&quot; in the start setup window.</p>
+<p>&nbsp;</p>
+<hr class=pb>
+<p><br>
+</p>
+<p>&nbsp;</p>
+<p><strong>* Storyline</strong></p>
+<p>The story begins with evil Dr. Robotnik and his minion Metal Sonic stealing the Master emerald from Angel Island. Blinded by Metal's flashbang bomb, Knuckles, the keeper of the Master emerald, confuses Metal Sonic for the real Sonic. &quot;Argh! What... S-Sonic?!&quot; - shouted Knuckles, falling to the ground. Robotnik and Metal escape, and Angel Island, not being powered by the energy of Master emerald anymore, falls down into the ocean.</p>
+<p>&nbsp;</p>
+<p>In the distance, near Tail's workshop, him and Sonic both noticed the island falling. &quot;Something wrong happened to the Master Emerald!&quot; - shouted Sonic. Inside the workshop, Tails used his radar and finds out that the Master emerald has been stolen by Dr. Robotnik for his new evil plan.</p>
+<p>&quot;Just as I thought&quot; - said Sonic - &quot;Quickly, let's find him!&quot;. Tails and Sonic get into the Tornado and fly away, heading to Dr. Robotnik's base. &quot;What about Knuckles?&quot; - asked Tails. &quot;Don't worry, that Echidna is a real tough guy. I'm sure we'll meet him on the way to the base&quot;.</p>
+<p>&nbsp;</p>
+<p>While that happens, Knuckles and his sidekick Mighty follow Sonic and Tails on the foots. &quot;Sonic must be working for Robotnik now! That hedgehog isn't gonna get away with that!&quot; - said Knuckles, noticing the Tornado in the sky. &quot;We'll get them soon when they will land&quot; - said Mighty.</p>
+<p>&nbsp;</p>
+<p>Few hours later. Half way there, the plane suddenly runs out of fuel and crash-lands on Green Island. &quot;What shall we do now?&quot; - said Tails, looking at the big island. &quot;Find Robotnik's secret base and spoil his evil plan of course, just like we always do!&quot; - said Sonic confidently. The two friends got out of the plane and began exploring the island.</p>
+<p>&nbsp;</p>
+<p>Little did they know that Dr. Robotnik had prepared a big surprise for them at his base. &quot;This is gonna be the end for Sonic and his friends&quot; - said the evil doctor, looking at the monitors - &quot;I'm gonna use the power of Master emerald in a brand new way - the kind of way they couldn't even imagine. The world will be mine!&quot;.</p>
+<p>&nbsp;</p>
+<p>And so, the adventure begins.</p>
+<p><br>
+</p>
+<p>
+  <b>* Gameplay</b><br>
+</p>
+<p>The game begins with the main menu. To access the main setup, choose the <strong>play</strong> option. After that, select the <strong>start game</strong> option. Then you'll need to select your character (Sonic, Tails, Knuckles or Mighty). Each character has its unique abilities.</p>
+<p><br>
+  Your enemies is Dr. Robotnik’s robots. To kill them just jump on them. Watch out for the walking bombs, they will explode if you touch them.<br>
+  You get hit if you touch robots while you just walking (or the robots shoot you). If you get hit – you will lose your rings. If you get hit while you do not have any rings – you lose one life. If you lose all lives – the game is over. There's no continues in this game.</p>
+<p>The game has checkpoints where you can save your game. You can load your saved game when you loose a life or by accessing the main setup menu. </p>
+<p>
+  <br>
+</p>
+<p>
+</p>
+<p>
+  <b>* Characters' Abilities</b>
+</p>
+<p><strong>1</strong>.Each character has a <strong>spin dash</strong> ability. To make spin dash just hold the <strong>Mouse 2</strong> button.</p>
+<p><br>
+  <strong>2</strong>.Tails can fly. Just jump and hold the <strong>use</strong> button.</p>
+<p><br>
+  <strong>3</strong>.Sonic can make the <strong>Air Dash</strong>. Just jump and press the <strong>use</strong> button.</p>
+<p><br>
+  <strong>4</strong>.Knuckles and Mighty also have special attacks. Just jump and press the <strong>use</strong> button while in air. </p>
+<p>&nbsp;</p>
+<hr class=pb>
+<p>&nbsp;</p>
+<p>
+  <br>
+</p>
+<p>
+<b>* Items</b><br>
+</p>
+<p>
+</p>
+Rings -For collecting rings you get score. If you get 100 rings, you will get one new life.<br>
+Score -If you get 50000, you will get one new life too.<br>
+<b><br>
+* Bonuses</b><br>
+<p>
+</p>
+<p>
+  They look like boxes with a screen. To get bonuses just jump on them.
+</p>
+<p>
+  <br>
+</p>
+<p>
+</p>
+<table cellpadding=3 cellspacing=0 class=zeroBorder id=qo21>
+  <tbody>
+  <tr>
+    <td>
+      <div id=sjyp style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_440282g8vcr_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      10 rings<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=k_1h style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_441djkhv7hp_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Temporary speed boost<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=jty2 style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_442ff8hjshc_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Temporary invincibility<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=jqdu style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_443dbsjjccx_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Shield<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=bvaa style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_444dgwkz7ck_b.png" style=HEIGHT:31px;WIDTH:28px><br>
+        <img src="images/dcx9q7gr_445cg94s59r_b.png" style=HEIGHT:31px;WIDTH:28px><br>
+        <img src="images/dcx9q7gr_446fgfj4bnx_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Score<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=gfq3 style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_447hbjkm94x_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Empty bonus<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=uwhm style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_448f5qcbphh_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Life<br>    </td>
+  </tr>
+  <tr>
+    <td><img src="images/bonus.jpg" alt="random bonus" width="28" height="31" /></td>
+    <td><p>Random bonus</p>
+      <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>
+      <div id=od8s style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_449hcnhj5d9_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Eggman's bonus. Watch out!<br>    </td>
+  </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>* Shield bonus</strong></p>
+<p><strong>1</strong>.Water shield</p>
+<p>Allows characters to breath underwater, also protects the player from toxic water.</p>
+<p>&nbsp;</p>
+<p><strong>2</strong>.Fire shield</p>
+<p>This shield gives the player fire immunity.</p>
+<p>&nbsp;</p>
+<p><strong>3</strong>.Electric shield</p>
+<p>This shield attracts rings and gives electricity immunity to the player.</p>
+<p>&nbsp;</p>
+<p>Each shield can protect the character against one hit. Fire and electric shield would disappear when the character went into water</p>
+<p><br>
+  <b>* Bonus Stages<br>
+  </b></p>
+<p>
+  If you collect 100 rings on a level, you will get into a <strong>bonus stage</strong> at the end. If you win, you will get the <strong>emerald</strong>. You can collect 5 emeralds on normal bonus stages in the current version. To get the last two emeralds, you have to unlock the <strong>bonus level</strong>.<br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Unlockable Bonuses<br>
+  </b>
+</p>
+<p>
+This kind of bonuses can be unlocked in main setup menu. You can unlock two features: </p>
+<p>&nbsp;</p>
+<p><strong>1</strong>.Level select. Just finish the demo to unlock this feature.</p>
+<p>&nbsp;</p>
+<p><strong>2</strong>.Bonus level, where you can get the <strong>two emeralds</strong>.  To unlock 
+  Bonus  stage you need to collect <strong>5</strong> <strong>emblems</strong> on the levels  (Boss levels do not have emblems). </p>
+<p>&nbsp;</p>
+<hr class=pb>
+<p>&nbsp;</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Credits</b></p>
+<p>Zykov Eddy – Lead Developer. </p>
+<p>E_mail: <a href=mailto:edik.zykov@yahoo.com>edik.zykov@yahoo.com</a></p>
+<p>Blog: <a href="http://eddyprojects.blogspot.ru/">eddyprojects.blogspot.ru</a></p>
+<p>Tea Monster - modeller (since 2012)</p>
+<p><br>
+  [LP]Scorpion, Cold, Speedus – modellers (until summer of 2010)<br>
+  Special thanks to Sly and Soer for great art support. </p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Special Thanks</b></p>
+<p>Quartz for helping with menu design.</p>
+<p>Cstyler for support.</p>
+<p>Junker  for flicky model and beta testing.<br>
+  Ashnal for Sonic and Knuckles models.<br>
+  Mephiles the hedgehog for textures support.<br>
+  Hey-Pi-Ron for some sounds, skins for models and beta testing.<br>
+  Dimag0g for coding support.<br>
+  Sunlight for beta testing.<br>
+  M210 for beta testing.<br>
+  Lezing and DeeperThought for help with code.<br>
+  Shadow Hunter for his character icon sprites support.<br>
+  STP for some models.<br>
+  Chicken for ring model skin.<br>
+  NeKit for helping with website, manual and ports.<br>
+  Mikko Sandt for review on his site.<br>
+  Special thanks to guys from Sonic CIS, AMC and duke4.net forums for some nice ideas.<br>
+  Thanks to Daroach and U1tim@t3 MikLess for modeling support.<br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Bugs</b>
+</p>
+<p>A lot of bugs were fixed after 2011, but there's still some problems. </p>
+<p>&nbsp;</p>
+<p>Some players may have a problems with OpenGl renderer.</p>
+<p>Possible reasons of OpenGl errors:</p>
+<p>&nbsp;</p>
+<p><strong>1</strong>. 8-bit renderer is accidently chosen.<br>
+  Solution: Choose the 32 bit renderer in the starting setup screen.</p>
+<p>&nbsp;</p>
+<p><strong>2</strong>.Video card driver needs to be updated. Very common for Radeon owners.<br>
+  Solution: update the video card driver.</p>
+<p>&nbsp;</p>
+<p><strong>3</strong>.The machine is Outdated. It also very common for netbook/notebook users.<br>
+Solution: Sadly, there's no solution for this problem. Try to play the game on another machine.</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Copyrights</b>
+</p>
+Textures, music and sounds are taken from:<br>
+Sonic games<br>
+Doom 1 &amp; 2 WADs<br>
+<p>Quake </p>
+<p> Quake 2 </p>
+<p> Unreal </p>
+<p> Tek War </p>
+<p> Duke Nukem 3D TCs </p>
+<p> Liquidator </p>
+<p> Blood</p>
+<p> Hexen2</p>
+<p> Half Life </p>
+<p> Zero Wing </p>
+<p> Shadow Warrior </p>
+<p>CG textures</p>
+<p> Zelda CD-I games (music tracks)</p>
+<p>In pursuit if greed (music tracks)</p>
+<p>Fighting Vipers 2 (music track)</p>
+<p>Sonic OVA (music tracks)</p>
+<p>Batman Beyond (music track)</p>
+<p>Sol Deace (music track) <br>
+  And other sources, which I can’t remember.</p>
+<p>&nbsp;</p>
+<p>Some textures made by jeztac33.<br>
+Some textures and models taken from Duke HRP.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><em>Sonic the Hedgehog 3D is a freeware, non-commercial fan project, not an official Sonic the Hedgehog game. You may NOT sell this software to gain profit. This project was not sponsored by any parties that are in any way related or affiliated with the &quot;Sonic the Hedgehog&quot; logo. Released as FREEWARE, but not public domain. All original Zykov Eddy material (c) Zykov Eddy. EDuke32 (c) TerminX, Pierre-Loup &quot;Plagman&quot; Griffais, Philipp &quot;Helixhorned&quot; Kutin, Matt &quot;Matteus&quot; Saettler. Build engine (c) Ken &quot;Awesoken&quot; Silverman. Sonic the Hedgehog (c) Sega.</em><br>
+</p>
+</body>
+</html>

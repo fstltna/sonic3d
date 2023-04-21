@@ -1,0 +1,10 @@
+Possible reasons of OpenGl errors:
+
+1. 8-bit renderer is accidently chosen.
+Solution: Choose the 32 bit renderer in the starting setup screen.
+
+2.Video card driver needs to be updated. Very common for Radeon owners.
+Solution: update the video card driver.
+
+3.The machine is Outdated. It also very common for netbook/notebook users.
+Solution: Sadly, there's no solution for this problem. Try to play the game on another machine.

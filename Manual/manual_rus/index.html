@@ -1,0 +1,927 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html class="pageview">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<base target="_top">
+<style type="text/css">
+  
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+  border-collapse: collapse;
+}
+
+
+tr {
+  
+  text-align: left;
+  
+}
+
+
+div, address, ol, ul, li, option, select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+
+pre {
+  font-family: Courier New;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+img {
+  -moz-force-broken-image-icon: 1;
+}
+
+@media screen {
+  html.pageview {
+    background-color: #f3f3f3 !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  
+
+  body {
+    min-height: 1100px;
+    
+    counter-reset: __goog_page__;
+  }
+  
+  * html body {
+    height: 1100px;
+  }
+  /* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+     targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+     That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+  html*#wys_frame::before {
+    content: '\A0';
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  .pageview body {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    width: 648px !important;
+    margin: 15px auto 25px;
+    padding: 40px 50px;
+  }
+  /* IE6 */
+  * html {
+    overflow-y: scroll;
+  }
+  * html.pageview body {
+    overflow-x: auto;
+  }
+  
+
+  
+    
+    .writely-callout-data {
+      display: none;
+    }
+    
+
+    .writely-footnote-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 7px;
+      overflow: hidden;
+      height: 16px;
+      vertical-align: top;
+
+      
+      -moz-user-select: none;
+    }
+    .editor .writely-footnote-marker {
+      cursor: move;
+    }
+    .writely-footnote-marker-highlight {
+      background-position: -15px 0;
+      -moz-user-select: text;
+    }
+    .writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection {
+      cursor: move;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+
+  
+
+
+  
+  .br_fix span+br:not(:-moz-last-node) {
+    
+    position:relative;
+    
+    left: -1ex
+    
+  }
+
+  
+  #cb-p-tgt {
+    font-size: 8pt;
+    padding: .4em;
+    background-color: #ddd;
+    color: #333;
+  }
+  #cb-p-tgt-can {
+    text-decoration: underline;
+    color: #36c;
+    font-weight: bold;
+    margin-left: 2em;
+  }
+  #cb-p-tgt .spin {
+    width: 16px;
+    height: 16px;
+    background: url(//ssl.gstatic.com/docs/clipboard/spin_16o.gif) no-repeat;
+  }
+}
+
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+.webkit-indent-blockquote { border: none; }
+
+a img {border: 0}
+
+.pb {
+  border-width: 0;
+  page-break-after: always;
+  /* We don't want this to be resizeable, so enforce a width and height
+     using !important */
+  height: 1px !important;
+  width: 100% !important;
+}
+
+.editor .pb {
+  border-top: 1px dashed #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
+}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Table of contents */
+.editor div.writely-toc {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.writely-toc > ol {
+  padding-left: 3em;
+  font-weight: bold;
+}
+ol.writely-toc-subheading {
+  padding-left: 1em;
+  font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+  list-style-position: inside;
+}
+.writely-toc-none {
+  list-style-type: none;
+}
+.writely-toc-decimal {
+  list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+  list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+  list-style-type: lower-roman;
+}
+.writely-toc-disc {
+  list-style-type: disc;
+}
+
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+   vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+  list-style-type: disc;
+}
+
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+  list-style-type: decimal;
+}
+
+/* end default css */
+
+
+  /* default print css */
+  @media print {
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+
+    .endnotes {
+      page: endnote;
+    }
+
+    /* MLA specifies that endnotes title should be 1" margin from the top of the page. */
+    @page endnote {
+      margin-top: 1in;
+    }
+
+    callout.google_footnote {
+      
+      display: prince-footnote;
+      footnote-style-position: inside;
+      /* These styles keep the footnote from taking on the style of the text
+         surrounding the footnote marker. They can be overridden in the
+         document CSS. */
+      color: #000;
+      font-family: Verdana;
+      font-size: 10.0pt;
+      font-weight: normal;
+    }
+
+    /* Table of contents */
+    #WritelyTableOfContents a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+
+    #WritelyTableOfContents a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+    @footnotes {
+      border-top: solid black thin;
+      padding-top: 8pt;
+    }
+  }
+  /* end default print css */
+
+
+/* custom css */
+
+
+/* end custom css */
+
+/* ui edited css */
+
+body {
+  font-family: Verdana;
+  
+  font-size: 10.0pt;
+  line-height: normal;
+  background-color: #ffffff;
+}
+/* end ui edited css */
+
+
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+
+
+.editor div.google_header, .editor div.google_footer {
+  border: 2px #DDDDDD dashed;
+  position: static;
+  width: 100%;
+  min-height: 2em;
+}
+
+.editor .misspell {background-color: yellow}
+
+.editor .writely-comment {
+  font-size: 9pt;
+  line-height: 1.4;
+  padding: 1px;
+  border: 1px dashed #C0C0C0
+}
+
+
+/* end editor CSS */
+
+</style>
+
+  
+  <title>Sonic the Hedgehog 3D RUS Manual</title>
+
+</head>
+
+<body 
+    
+    >
+    
+    
+    
+<p style=TEXT-ALIGN:center></p>
+<p style=TEXT-ALIGN:center></p>
+<p style=TEXT-ALIGN:center></p>
+<p style=TEXT-ALIGN:center></p>
+<p style=TEXT-ALIGN:center></p>
+<p style=TEXT-ALIGN:center></p>
+<p style=TEXT-ALIGN:center><img src="images/logo.jpg" alt="logo" width="433" height="150" /></p>
+<p style=TEXT-ALIGN:center></p>
+<div id=ef_5 style=TEXT-ALIGN:center></div>
+<p>
+</p>
+<h2 style=TEXT-ALIGN:center>V 0.3.1</h2>
+<p>
+  <br>
+</p>
+<p>
+<strong>Sonic the Hedgehog 3D</strong> — фанатская игра про известного персонажа Соника, созданная разработчиком <strong>Zykov Eddy</strong> и базирующаяся на движке Eduke32 (современная версия движка <a href="http://en.wikipedia.org/wiki/Build_engine">Build</a>). Разработка игры чередовалась большими перерывами. Целью создания игры являлось сделать некий гибрид двух игровых серий: серии <strong>Sonic Adventure</strong> и серии игр про Соника с приставки <strong>Sega Mega Drive</strong>. Игра придётся по вкусу как фанатам игровой вселенной Соника, так и фанатам трёхмерных инди платформеров.</p>
+<p>&nbsp;</p>
+<p>Важно:  для того, чтобы играть в эту игру, необходимо, чтобы ваш компьютер поддерживал OpenGL.<br>
+</p>
+<p>&nbsp;</p>
+<p>
+  <a class="external text" href=http://www.sonic3d.ru/ rel=nofollow><br>
+  </a>
+</p>
+<p>
+  <b>* Минимальные системные требования:</b>
+</p>
+Windows XP/7
+<p>
+  Процессор 2.0GHz Intel Pentium III или AMD Athlon
+</p>
+<p>
+  256 MB of RAM
+</p>
+<p>
+  64 MB видео карта с драйверами, поддерживающими OpenGL<br>
+</p>
+<p>
+  ("GeForce4 MX" или выше)
+</p>
+<p>
+</p>
+<p>
+  Звуковая карта, работающая с OpenAL
+</p>
+<p>
+  Клавиатура
+</p>
+<p>
+  Мышь
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Рекомендованные системные требования:</b>
+</p>
+<p>Windows XP/7<br>
+</p>
+<p>
+  Процессор Intel Pentium 4 или AMD Athlon XP (или выше)
+</p>
+<p>
+  1GB(+) RAM
+</p>
+<p>
+  256(+) MB видео карта с драйверами, поддерживающими OpenGL
+</p>
+<p>
+  ("Radeon 9600 Pro" или выше)
+</p>
+<p>
+</p>
+<p>
+  Звуковая карта, работающая с OpenAL
+</p>
+<p>
+  Клавиатура
+</p>
+<p>
+  Мышь
+</p>
+<p>
+  <br>
+</p>
+<p>
+  Рекомендуется использовать последние версии драйверов.<br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+</p>
+<p>
+  <b>* Сайты с софтом:</b>
+</p>
+<p>
+  ATI: <a href=http://ati.com id=vsoh title=ati.com>Ati.com</a>
+</p>
+<p>
+  Creative Labs: <a href=http://creative.com id=wvhl title=Creative.com>Creative.com</a>
+</p>
+<p>
+  Hercules: <a href=http://hercules.com/ id=jvjx title=hercules.com>Hercules.com</a>
+</p>
+<p>
+  Intel: <a href=http://intel.com/ id=vaqw title=Intel.com>Intel.com</a>
+</p>
+<p>
+  Matrox: <a href=http://matrox.com/ id=sp1g title=Matrox.com>Matrox.com</a>
+</p>
+<p>
+  Nvidia: <a href=http://nvidia.com/ id=diw8 title=Nvidia.com>Nvidia.com</a>
+</p>
+<p>
+  S3: <a href=http://s3graphics.com/ id=kxhu title=S3graphics.com>S3graphics.com</a>
+</p>
+<p>
+  SIS: <a href=http://sis.com/ id=cqy. title=Sis.com>Sis.com</a>
+</p>
+<p>
+  Trident: <a href=http://tridentmicro.com/ id=t0t_ title=Tridentmicro.com>Tridentmicro.com</a><br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Управление</b> <strong>по умолчанию</strong><br>
+  <strong>W</strong> – движение вперёд<br>
+  <strong>S</strong> – движение назад<br>
+  <strong>A</strong> – шаг влево<br>
+  <strong>D</strong> – шаг вправо</p>
+<p><strong>Мышка</strong> - обзор</p>
+<p><strong>Space</strong> - прыжок<br>
+  <strong>Правая кнопка мыши</strong> или <strong>левый ctrl</strong> – активация спин атаки</p>
+<p>
+  <strong>E</strong> или <strong>левая кнопка мыши</strong> - использовать. Необходимо для активации специальных атак и использования кнопок/предметов.<br>
+  <strong>Esc</strong> – выход в меню/пауза</p>
+<p><strong>F</strong> – активировать супер режим (вам нужны все изумруды  и 50 колец для этого)</p>
+<p><strong>H</strong> – изменить интерфейс (имеются два)<br>
+  <strong>F12</strong> – снять скриншот (появляется в папке игры в формате PNG)</p>
+<p>&nbsp;</p>
+<p> Вы можете изменить управление по своему желанию в <strong>Keyboard</strong> и <strong>Mouse</strong> options</p>
+<p>Чтобы играть с джойстиком, в начальном окне в графе &quot;<strong>Input Devices</strong>&quot; выберите &quot;<strong>All supported devices</strong>&quot;.</p>
+<p>&nbsp;</p>
+<hr class=pb>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>* Сюжет</strong></p>
+<p>Сюжет начинается с того, что злой доктор Роботник и его приспешник Метал Соник крадут Главный изумруд с острова Ангелов. Наклз, охранник  изумруда, получает повреждения от неожиданного взрыва световой бомбы, при этом путая очертания Метал Соника за силуэт обыкновенного Соника из-за ослепляющего света. &quot;Что!? ... С-Соник?&quot; - крикнула от удивление ехидна, перед тем как отлететь в сторону. Роботник и Метал успевают сбежать, и затем Остров Ангелов, оставшийся без энергии Главного изумруда, падает в океан.</p>
+<p>&nbsp;</p>
+<p>На некотором расстоянии от острова, в мастерской Тейлза, он и Соник  замечают падение острова. &quot;Что-то случилось с Главным изумрудом!&quot; - воскликнул Соник. Воспользовавшись радаром, механик Тейлз узнаёт горькую правду - Главный изумруд был украден доктором Роботником для его очередного тёмного плана.</p>
+<p>&quot;Ну что же, так я и думал&quot; - сказал соник - &quot;Быстрее, за ним!&quot;.</p>
+<p>&nbsp;</p>
+<p>Быстро забравшись  в Торнадо, самолёт, принадлежащий Тейлзу, друзья вскоре улетают, взяв курс на базу Роботника. Тем временем, Наклз и его напарник Майти преследуют Соника и Тейлза по суше. &quot;Не могу поверить, Соник должно быть работает теперь на Роботника! Этот чертов ёж не уйдёт от меня!&quot; - выкрикнул со злостью Наклз, замечая самолёт в небе. &quot;когда они приземлятся, мы найдём их и быстро разберёмся, что к чему&quot; - добавляет Майти.</p>
+<p>&nbsp;</p>
+<p>Несколько часов спустя, на полпути к базе, Тейлз неожиданно замечает что у самолёта почти не осталось топлива и он совершает вынужденную посадку на Зелёных островах. &quot;Что же теперь делать?&quot; - с досадой сказал Тейлз, осматривая большой остров. &quot;Как что? Найдём базу Роботника своими силами и разрушим его планы, как и всегда!&quot; - с уверенностью заявляет Соник. Выбравшись из кабины, друзья отправились обследовать местность.</p>
+<p>&nbsp;</p>
+<p>Если бы они только знали, что злой доктор приготовил для них большую ловушку на своей базе. &quot;Это будет конец для Соника и его друзей!&quot; - сказал Роботник, следя за мониторами на своей базе - &quot;Я воспользуюсь силой Главного изумруда так, как они  даже еще и представить себе не могли. Мир будет моим!&quot;</p>
+<p>
+  <br>
+  <b>* Игровой</b> <b>процесс</b></p>
+<p>Игра начинается с главного меню. Для того, чтобы перейти далее, нажмите на пункт <strong>Play</strong>. В следующем меню выбирайте <strong>start game</strong> для начала игры. Также в этом меню можно выбрать открываемые бонусы и загрузить последнюю сохранённую игру.</p>
+<p>&nbsp;</p>
+<p>
+  Далее Вам необходимо выбрать персонажа (Соник, Теилз, Наклз или Майти).
+</p>
+<p>
+  Ваши враги – роботы доктора Роботника. Для того, чтобы уничтожить их, прыгните на них, или используйте спин атаку. Соник, Наклз и Майти могут уничтожать врагов с помощью своих способностей.</p>
+<p>&nbsp;</p>
+<p>Всего в данной версии доступны три уровня, по три акта в первых двух и один в третьем. В каждом третьем акте вас ждет борьба с боссом уровня. На уровнях есть множество объектов, включая пружины для высоких прыжков, ускорители, бонусы и также точки сохранения. На этих точках вы можете сохранить игру, чтобы потом вернуться к ней если вас ранят или когда вы выключите игру и зайдёте снова.</p>
+<p>С каждым уровнем вы встретите все больше новых противников. Некоторые роботы умеют стрелять, некоторые попытаются атаковать вас вблизи. Опасайтесь ходячих бомб, они взрываются, если Вы подойдете слишком близко, и их невозможно уничтожить до взрыва.</p>
+<p>&nbsp;</p>
+<p>
+Вас могут ранить, когда вы подходите слишком близко к роботам или другим опасным объектам (или же когда вас подстрелили). Если вас ранили, когда на вас нет защиты – вы теряете накопленные кольца. Если вас ранили, когда у Вас нет колец, вы теряете жизнь и вам предложат загрузить сохранённую игру. Если вас ранили, когда у вас нет жизней - игра окончена, вам придётся начать всё сначала. Continues в игре нет. Сохранённые точки при этом теряются.</p>
+<p>Игра иногда прерывается катсценками, раскрывающими сюжет. Если вы хотите пропустить катсценку, то просто нажмите вторую кнопку мыши.<br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Способности</b> <b>персонажей</b>
+</p>
+<p>
+  <strong>1</strong>.Каждый персонаж умеет делать спин атаку. Для того, чтобы использовать эту атаку, <strong>зажмите</strong> вторую кнопку мыши и подождите разгона. После этого отожмите  кнопку.</p>
+<p>&nbsp;</p>
+<p>
+  <strong>2</strong>.Теилз может летать. Для этого прыгните и <strong>зажмите</strong> кнопку »<strong>использовать</strong>». Помните, что время полета ограничено (В супер режиме - нет).</p>
+<p>&nbsp;</p>
+<p>
+  <strong>3</strong>.Соник обладает способностью под названием Air Dash, просто подпрыгните и нажмите »<strong>использовать</strong>».</p>
+<p>&nbsp;</p>
+<p>
+  <strong>4</strong>.Наклз и Майти также имеют особые атаки и способности. Для того чтобы воспользоваться ими, точно также подпрыгните и нажмите »<strong>использовать</strong>».</p>
+<p>&nbsp;</p>
+<hr class=pb>
+<p>&nbsp;</p>
+<p>
+  <br>
+</p>
+<p>
+<b>* Предметы</b></p>
+<p>Соник не может в одиночку справиться с армией роботов доктора Роботника, поэтому на вашем пути вы сможете собрать множество предметов, которые помогут вам в вашей задаче.</p>
+<p><br>
+</p>
+<p>
+</p>
+<p>Самые важные предметы, чаще всего встречающиеся на уровнях - <strong>Кольца</strong>. Собирайте их, и у Вас в дальнейшем будет много очков. Если вы набрали 100 колец, то Вы получаете жизнь. Если вы набираете 50000 очков, то вы также получаете жизнь.</p>
+<p>&nbsp;</p>
+<p>Отдельная категория предметов - бонусы, дающие вам различные способности.<br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+</p>
+<b>* Бонусы</b><br>
+<p>
+</p>
+<p>
+</p>
+<p>
+  Они выглядят как коробочки с экранами. Чтобы получить бонус, просто запрыгните на него.
+</p>
+<p>
+  <br>
+</p>
+<p>
+</p>
+<table cellpadding=3 cellspacing=0 class=zeroBorder id=qo21>
+  <tbody>
+  <tr>
+    <td width="33">
+      <div id=sjyp style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_440282g8vcr_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td width="200">
+      Десять колец<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=k_1h style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_441djkhv7hp_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Временное ускорение<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=jty2 style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_442ff8hjshc_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Временная неуязвимость<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=jqdu style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_443dbsjjccx_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Защита (бывает трех типов) </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=bvaa style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_444dgwkz7ck_b.png" style=HEIGHT:31px;WIDTH:28px><br>
+        <img src="images/dcx9q7gr_445cg94s59r_b.png" style=HEIGHT:31px;WIDTH:28px><br>
+        <img src="images/dcx9q7gr_446fgfj4bnx_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Очки <br>
+      (100, 200, 500 или 1000)<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=gfq3 style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_447hbjkm94x_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Пустой бонус. И зачем он только нужен?<br>    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id=uwhm style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_448f5qcbphh_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Жизнь<br>    </td>
+  </tr>
+  <tr>
+    <td height="38"><img src="images/bonus.jpg" alt="bonus" width="28" height="31" /></td>
+    <td>Случайный бонус</td>
+  </tr>
+  <tr>
+    <td height="51">
+      <div id=od8s style=TEXT-ALIGN:left>
+        <img src="images/dcx9q7gr_449hcnhj5d9_b.png" style=HEIGHT:31px;WIDTH:28px>      </div>    </td>
+    <td>
+      Вредный бонус<br>    </td>
+  </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+<p><strong>* Виды защиты</strong></p>
+<p>Все виды защиты предохраняют вас от потери колец если вас ранят. При этом защиту вы теряете. Также, у каждого типа есть свои особенности:</p>
+<p>&nbsp;</p>
+<p><strong>1</strong>.Синяя, водяная защита.</p>
+<p>Даёт возможность дышать под водой, а также плавать в токсичной жидкости.</p>
+<p>&nbsp;</p>
+<p><strong>2</strong>.Красная, огненная защита.</p>
+<p>Защищает от огненных ловушек. Пропадаёт, если игрок полностью погружается в воду.</p>
+<p>&nbsp;</p>
+<p><strong>3</strong>.Жёлтая, электрическая защита.</p>
+<p>Притягивает кольца, защищает от электрических ловушек. Как и огненная, эта защита пропадаёт, если игрок полностью погружается в воду.</p>
+<p><br>
+  <b>* Бонусные стадии</b></p>
+<p>
+Если вы наберете на уровне 100 колец, то по окончанию уровня Вам откроется путь на <strong>бонусную стадию</strong> (он откроется даже если вы по пути потеряете все кольца). На бонусной стадии у вас есть задача - за отведенное время собрать нужное количество колец на небольшой территории. Если вы её выполните вовремя, то Вы получаете <strong>изумруд хаоса</strong> и <strong>10000 очков</strong>. В противном случае Вы возвращаетесь обратно в игру.</p>
+<p>&nbsp;</p>
+<p>Закончив стадию на уровне, имейте в виду, что ваш изумруд, который вы в ней получили, сохранится у вас даже при <strong>повторном</strong> начатии игры, и вернуться на стадию снова вы не сможете. Всего на обычных бонусных стадиях вы можете собрать 5 изумрудов в текущей версии игры (в будущих версиях вы сможете собрать все 7 изумрудов на уровнях). В данной версии для двух оставшихся изумрудов отведён один <strong>разблокируемый бонусный уровень</strong>.</p>
+<p>&nbsp;</p>
+<p>* <strong>Супер формы</strong></p>
+<p>У каждого персонажа есть своя супер форма, которой можно воспользоваться при наличии <strong>семи</strong> изумрудов хаоса. Для активации супер формы нужно собрать <strong>50 колец</strong> и нажать <strong>клавишу F</strong>. В данном режиме персонаж становится бессмертен (однако, всё еще может задохнуться в воде или быть раздавлен), может двигаться с большой скоростью и прыгать выше чем раньше. Также Тейлз в супер форме получает возможность бесконечно летать. Однако, в данном режиме у персонажей каждую секунду тратится по одному колечку. Супер форма исчезает когда кольца заканчиваются.<br>
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Открываемые бонусы</b>
+</p>
+<p>
+Этот вид бонусов может быть разблокирован во время игрового процесса. Если Вы разблокируете его и начнете игру заново, то вам будет показано меню, в котором вы сможете выбрать этот бонус. Для разблокировки Вам необходимо выполнить некую задачу в игре. На данный момент есть два типа бонусов:</p>
+<p>&nbsp;</p>
+<p><strong>1</strong>.Выбор уровня. Для этого вы должны пройти каждый уровень игры. Применяйте этот бонус для того, чтобы возвращаться на любой уровень игры (например для того, чтобы получить изумруд на специальной стадии или найти эмблему для разблокировки бонусного уровня)</p>
+<p>&nbsp;</p>
+<p><strong>2</strong>.Бонусная стадия. На ней вы можете получить<strong> два изумруда</strong>. Для того, чтобы открыть её, вы должны собрать <strong>5</strong> <strong>эмблем</strong>. Эмблемы находятся на игровых уровнях, но их нет на уровнях с боссами. Эмблемы спрятаны, но не слишком далеко, так что вам нужно всего лишь проявлять внимательность, чтобы найти их.</p>
+<p>&nbsp;</p>
+<hr class=pb>
+<p>&nbsp;</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Авторы:</b>
+</p>
+<p>
+  Zykov Eddy – Лидер проекта </p>
+<p>E_mail: <a class="external text" href=mailto:edik.zykov@yahoo.com rel=nofollow><u>edik.zykov@yahoo.com</u></a></p>
+<p>Блог: <a href="http://eddyprojects.blogspot.ru/">eddyprojects.blogspot.ru</a></p>
+<p>Tea Monster - текущий моделлер</p>
+<p>&nbsp;</p>
+<p>
+  [LP]Scorpion, Cold, Speedus – моделлеры (учавствовали в проекте до 30.06.10)</p>
+<p>&nbsp;</p>
+<p>
+  Также особое спасибо Sly за работу с графикой и меню игры (экраны и обработка шрифта) и Soer за рисунок Соника для титульного экрана.</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Также</b> <b>спасибо:</b></p>
+<p>Quartz за помощь с дизайном меню.</p>
+<p>
+  Cstyler за поддержку.</p>
+<p>Junker за модель флики и бета тестинг.</p>
+<p>
+  Ashnal за модели Соника и Наклза.
+</p>
+<p>
+  Mephiles за помощь с текстурами.
+</p>
+<p>
+  Hey-Pi-Ron за помощь со звуками, скины для моделей и бета тестинг.
+</p>
+<p>
+  Dimag0g за помощь с программированием.
+</p>
+<p>
+  Sunlight за бета тестинг на ранних стадиях разработки.
+</p>
+<p>
+  M210 за бета тестинг.
+</p>
+<p>
+  Lezing, James Stanfield и DeeperThought за помощь с программированием.</p>
+<p>
+  Shadow Hunter за иконки персонажей для диалогов.
+</p>
+<p>
+  STP за некоторые модели.
+</p>
+<p>
+  Chicken за скин для модели кольца
+</p>
+<p>
+  NeKit за помощь с веб-сайтом, портами на другие ОС и мануалами.
+</p>
+<p>
+  Mikko Sandt за ревью на его сайте.</p>
+<p>
+  Также спасибо людям с форумов Sonic CIS, AMC и duke4.net за поддержку и идеи.</p>
+<p>
+  Спасибо Daroach и U1tim@t3 MikLess за помощь с моделями.
+</p>
+<p>
+  <br>
+</p>
+<p>
+  <b>* Ошибки и баги</b>
+</p>
+<p>
+  По сравнению с версиями до 2011 года их количество значительно уменьшилось, однако некоторые баги все еще присутствуют.</p>
+<p>&nbsp;</p>
+<p>Известные баги: Возможный низкий FPS на некоторых участках, проблемы с прозрачностью (один объект может визуально искажать другой, к примеру вода), звуковые искажения, искажение текстур у некоторых моделей на ноутбуках или нетбуках.</p>
+<p>&nbsp;</p>
+<p>Также проблемы могут быть с совместимостью игры и вашей видеокартой. Самая распространенная проблема у владельцев ноутбуков или слабых систем - в игре не отображаются модели, а текстуры отображаются в плохом качестве.</p>
+<p><br>
+Возможные причины:</p>
+<p>1)Вы играете на, скорее всего, на устаревшем или слабом ноутбуке или нетбуке.<br>
+  2)На вашей системе стоит устаревшая видеокарта.<br>
+  3)Ваша видеокарта -ATI. Не устаревшая, но тем не менее у вас есть проблемы.</p>
+<p>&nbsp;</p>
+<p>Во всех этих трех случаях можно лишь посоветовать обновить драйвера для видеокарт. В последнем случае этот способ с большой вероятностью может помочь.</p>
+<p><br>
+</p>
+<p>
+  <b>* Откуда были взяты ресурсы</b>
+</p>
+<p>
+  Текстуры, музыка и звуки были взяты из:
+</p>
+<p>
+  Игр про Соника</p>
+<p>
+  Doom 1 &amp; 2, а также WAD’ов для них</p>
+<p>
+  Quake
+</p>
+<p>
+  Quake 2
+</p>
+<p>
+  Unreal
+</p>
+<p>
+  Tek War
+</p>
+<p>
+  Duke Nukem 3D TCs
+</p>
+<p>
+  Liquidator
+</p>
+<p>
+  Blood</p>
+<p>
+  Hexen2</p>
+<p>
+  Half Life
+</p>
+<p>
+  Zero Wing
+</p>
+<p>
+  Shadow Warrior</p>
+<p>CG textures</p>
+<p>
+  Zelda CD-I</p>
+<p>In Pursuit if Greed</p>
+<p>Fighting Vipers 2</p>
+<p>Sonic OVA</p>
+<p>Sol Deace</p>
+<p>Batman Beyond</p>
+<p>&nbsp;</p>
+<p>
+  И из других источников, которые я не могу вспомнить.</p>
+<p>&nbsp;</p>
+<p>Некоторые текстуры сделаны jeztac33.</p>
+<p>Некоторые текстуры и модели взяты из Duke HRP. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><em>Sonic the Hedgehog 3D is a freeware, non-commercial fan project, not an official Sonic the Hedgehog game. You may NOT sell this software to gain profit. This project was not sponsored by any parties that are in any way related or affiliated with the &quot;Sonic the Hedgehog&quot; logo. Released as FREEWARE, but not public domain. All original Zykov Eddy material (c) Zykov Eddy. EDuke32 (c) TerminX, Pierre-Loup &quot;Plagman&quot; Griffais, Philipp &quot;Helixhorned&quot; Kutin, Matt &quot;Matteus&quot; Saettler. Build engine (c) Ken &quot;Awesoken&quot; Silverman. Sonic the Hedgehog (c) Sega.</em><br>
+</p>
+</body>
+</html>
