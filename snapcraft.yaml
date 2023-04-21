@@ -1,12 +1,12 @@
-name:  centipede
-title:  Centipede
+name:  sonic3d
+title:  Sonic the Hedgehog 3D
 version: "0.3.1"
-summary:   Classic arcade game
+summary:   Sonic fan game
 description: |
-  Classic arcade game
+  Sonic fan game
 
 grade: stable
-icon: centipede_icon.png
+icon: sonic3d_icon.png
 
 base: core18
 confinement: strict
@@ -20,7 +20,7 @@ environment:
   SOMMELIER_STRICT: "1"                                    # Make Sommelier exit when unset variable is used. (useful to find bugs in sommelier)
 
 apps:
-  centipede:
+  sonic3d:
     extensions: [ gnome-3-28 ]
     command: bin/sommelier run-exe
     environment:
